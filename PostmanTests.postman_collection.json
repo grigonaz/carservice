@@ -1,0 +1,1360 @@
+{
+	"info": {
+		"_postman_id": "36294330-3507-4dc6-9e3e-4951faf03fdf",
+		"name": "CarServicePostmanTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "LoginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"adminUser\",\r\n    \"password\": \"adm1n\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/auth",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogOut",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE1MTcsImlhdCI6MTYwOTgwNTUxN30._wk1wBjVrNCbdihig0p-DdPDzAXJZJAWJ9LuVGyKn3Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/users/logout",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"simpleUserName\",\r\n    \"lastName\":\"simpleUserLastName\",\r\n    \"username\":\"simpleUser\",\r\n    \"password\":\"simplePassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/users/register",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "ChangeRole",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"ROLE_EMPLOYEE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/users/adminUser/role",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"adminUser",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeMoney",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"money\": 20000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/users/adminUser/money",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"users",
+								"adminUser",
+								"money"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/carts",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addItem",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 5,\r\n    \"product\":\r\n    {\r\n        \"id\": 251\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/carts/items",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"carts",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveAll",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/carts/items/all",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"carts",
+								"items",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeItem",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/carts/items/202",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"carts",
+								"items",
+								"202"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCartByUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/carts/52",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"carts",
+								"52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wheeel 25\",\r\n    \"amount\": \"150\",\r\n    \"price\" : 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/product",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProduct",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/product/251",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"product",
+								"251"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/product",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProducts",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 55,\r\n    \"name\": \"GearBox LADO KRESTA\",\r\n    \"amount\": 150,\r\n    \"price\": 100.0,\r\n    \"categories\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/product/55",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"product",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeProducts",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/product/55",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"product",
+								"55"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "addCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Gear Boxes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/category",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/category/252",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category",
+								"252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductsByCategoryId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/category/352/products",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category",
+								"352",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductToCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/category/252/products/251",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category",
+								"252",
+								"products",
+								"251"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/category",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeProductFromCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/category/301/products/51",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"category",
+								"301",
+								"products",
+								"51"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/orders",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/orders/301",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"orders",
+								"301"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"info\":\"ONTHEWAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/orders/301",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"orders",
+								"301"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "getNotifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/notifications/",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"notifications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotificationsByUsername",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/notifications/adminUser/all",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"notifications",
+								"adminUser",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/notifications/303",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"notifications",
+								"303"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderItem",
+			"item": [
+				{
+					"name": "changeStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"info\":\"ONTHEWAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/orders/items/302",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"orders",
+								"items",
+								"302"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AutoService",
+			"item": [
+				{
+					"name": "createAutoService",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Change window\",\n    \"price\" : 100.0,\n    \"available\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/autoservice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"autoservice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllServices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/autoservice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"autoservice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAutoserviceById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/autoservice/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"autoservice",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateService",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Crash window :)\",\r\n    \"price\" : 100.0,\r\n    \"available\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/autoservice/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"autoservice",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeactivateService",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/autoservice/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"autoservice",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RepairCart",
+			"item": [
+				{
+					"name": "getRepairCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repaircarts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repaircarts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addAutoService",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1,\n    \"autoService\":\n    {\n        \"id\" : 4\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repaircarts/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repaircarts",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repaircarts/items/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repaircarts",
+								"items",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteServiceItem",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repaircarts/items/403",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repaircarts",
+								"items",
+								"403"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRepairCartByUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repaircarts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repaircarts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Repair",
+			"item": [
+				{
+					"name": "createRepair",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"BMW\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repairs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repairs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRepairById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repairs/452",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repairs",
+								"452"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeRapairStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"info\" : \"DONE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/repairs/452",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"repairs",
+								"452"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work",
+			"item": [
+				{
+					"name": "createWork",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"beginWork\" : \"2020-07-05 10:10\",\n    \"finishWork\" : \"2020-08-05 10:10\",\n    \"repairId\" : 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/work",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"work"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWorkById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk4NDE3OTQsImlhdCI6MTYwOTgwNTc5NH0.uRYuoPRRITAiUnqKDnKF0YnZWrOUCtUZfrBf-xIXqe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/work/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"work",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllWorksByEmployeeId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXIiLCJleHAiOjE2MDk3MzY3OTcsImlhdCI6MTYwOTcwMDc5N30.WlnHPEOvkIAAKQkBq1D1i97RNWxAiPiEAPvduq-lsNc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/car-autoService/work/1/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car-autoService",
+								"work",
+								"1",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "path",
+			"value": "http://localhost:8080/car-autoService"
+		}
+	]
+}
